@@ -16,7 +16,8 @@ Start a PySpark session:
 from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("PySparkExample").getOrCreate()
-II. Data Loading
+```
+```II. Data Loading
 
 PySpark supports various data sources. Here are examples:
 CSV:
@@ -34,7 +35,8 @@ python
 Copy
 data_json = spark.read.json("path/to/your/file.json")
 Other Formats: PySpark supports many other formats including ORC, Avro, JDBC, and more. Consult the PySpark documentation for specifics.
-III. Data Transformations
+```
+```III. Data Transformations
 
 PySpark provides powerful transformations for data manipulation. Key operations include:
 Selecting Columns:
@@ -60,7 +62,8 @@ from pyspark.sql.functions import sum, avg, count
 aggregated_data = data_csv.groupBy("column1").agg(sum("column2"), avg("column2"), count("*"))
 Joining DataFrames:  Use .join() to combine dataframes based on common columns (inner, left, right, full outer joins available).
 UDFs (User Defined Functions): Create custom functions for complex transformations.
-IV. Data Writing
+```
+```IV. Data Writing
 
 Write transformed data back to various formats:
 Parquet:
@@ -78,6 +81,7 @@ Copy
 data_json.write.json("path/to/output/file.json", mode="overwrite")
 Other Formats: Similar methods exist for other formats.
 V. Important Considerations
+```
 
 Schema: Define schemas explicitly for better performance and data type consistency.
 Data Partitioning: Partition your data for improved query performance (e.g., by date or another relevant column).
